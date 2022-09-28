@@ -1,2 +1,2 @@
 # pokedex-react
-Link Netlify ===> https://pokedex-app-react-academlo.netlify.app/#/pokedex
+Link Netlify ===> https://pokedex-app-react-academlo.netlify.app/#/
