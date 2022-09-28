@@ -185,7 +185,6 @@ body{
 .loading-container{
   width: 100%;
   min-height: 100vh;
-  background-size: 200%;
   background: #f3fcff;
   margin-top: -10px;
 }
