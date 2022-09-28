@@ -4,12 +4,14 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import LoadingScreenPokemon from "./LoadingScreenPokemon";
 
 const PokemonDetail = () => {
   const { name } = useParams();
   const [pokemon, setPokemon] = useState({});
   const [background, setBackground] = useState("");
   const [color, setColor] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -57,6 +59,9 @@ const PokemonDetail = () => {
         water: "#1552e1",
       };
       setColor(pokemonTypeColor[res.data.types?.[0].type?.name]);
+      setTimeout(()=>{
+        setIsLoading(false);
+      }, 5500)
     });
   }, [name]);
 
@@ -111,7 +116,9 @@ const PokemonDetail = () => {
   };
 
   console.log(pokemon);
-  return (
+  return isLoading ? (
+    <LoadingScreenPokemon />
+  ) : (
     <div
       style={{ background: background, color: color }}
       key={pokemon.id}

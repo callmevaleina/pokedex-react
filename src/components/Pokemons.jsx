@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
 import { useNavigate } from "react-router-dom";
-import LoadingScreen from "./LoadingScreen";
 import pokedexLogo from '../assets/pokedexLogo.png';
 import ReactPaginate from 'react-paginate';
+import LoadingScreenPokemons from "./LoadingScreenPokemons";
 
 const Pokemons = () => {
   const userName = useSelector((state) => state.userName);
@@ -24,7 +24,7 @@ const Pokemons = () => {
         setPokemons(res.data.results);
         setTimeout(()=>{
             setIsLoading(false);
-        }, 5000)
+        }, 3000)
       });
 
     axios
@@ -77,7 +77,7 @@ const Pokemons = () => {
   };
 
   return isLoading ? (
-    <LoadingScreen />
+    <LoadingScreenPokemons />
   ) : (
     <div className="container">
       <div className="header-pokemons">

@@ -185,12 +185,19 @@ body{
 .loading-container{
   width: 100%;
   min-height: 100vh;
-  background-size: 200%;
-  background: #f3fcff;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.loading-container-pokemon{
+  width: 100%;
+  min-height: 100vh;
+  background: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
 
 /*! POKEMONS INPUT  */
 
