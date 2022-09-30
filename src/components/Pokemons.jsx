@@ -44,7 +44,7 @@ const Pokemons = () => {
       axios.get(typeUrl).then((res) => setPokemons(res.data?.pokemon));
     } else {
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=1154`)
+        .get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1155`)
         .then((res) => setPokemons(res.data.results));
     }
   };
